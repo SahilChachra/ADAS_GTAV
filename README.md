@@ -11,7 +11,7 @@ We all enjoy playing GTA games be it for mission, online or for the open world e
 ## :star: What is actually happening
 So, the vehicle chosen is a truck (as assistive breaking makes more sense in highway for trucks in case driver doesn't reacts in time). The horizontal line which you see is a reference line from where distance (pixel distance) is measured w.r.t detected objects. For now breaks are applied only if a person, car or truck comes very close to the ego vehicle. Above the bounding box you see name of the class and the distance (in pixels). Also, the car is NOT driving itself, the user drives it and where necessary the model's output decide the assistive breaks. (Tried to make the car drive on it's own inside the lane using OpenCv, seriously results weren't good xD)
 
-## :key: Results
+## :key: Features
 <ol>
     <li>Automatically break/slow down if the car ahead of yours is very close</li>
 </ol>
@@ -26,3 +26,6 @@ So, the vehicle chosen is a truck (as assistive breaking makes more sense in hig
 
 ## :heart: Reference
 Inspired by [Sendex](https://github.com/Sentdex)
+
+## :smiley: Extras
+Readme will be updated with more info...
