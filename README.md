@@ -5,7 +5,7 @@ We all enjoy playing GTA games be it for mission, online or for the open world e
 
 ## :hourglass: Some Screenshots
 
-![]()
-![]()
+![](https://github.com/SahilChachra/ADAS_GTAV/blob/main/assets/adas_ss_1.png)
+![](https://github.com/SahilChachra/ADAS_GTAV/blob/main/assets/adas_ss_2.png)
 
 ## README in progress...
