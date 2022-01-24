@@ -3,7 +3,7 @@
 ## :innocent: Motivation
 We all enjoy playing GTA games be it for mission, online or for the open world experience. In recent times, it has become famous in computer vision community to show some concept w.r.t to autonomous driving. In this repo I try add some assisted driving features with use of computer vision in Python
 
-## :hourglass: Some Screenshots
+## :framed_picture: Some Screenshots
 
 ![](https://github.com/SahilChachra/ADAS_GTAV/blob/main/assets/adas_ss_1.png)
 ![](https://github.com/SahilChachra/ADAS_GTAV/blob/main/assets/adas_ss_2.png)
@@ -17,15 +17,23 @@ So, the vehicle chosen is a truck (as assistive breaking makes more sense in hig
 </ol>
 
 ## :eyes: Future add-ons
-<ol>
+<ul>
     <li>Use depth maps to measure distance instead of pixel distance</li>
     <li>Automatically stop the truck if traffic light is red</li>
     <li>Improve/add lane detection (gtav_laneDetect is not accurate hence cannot drive automatically)</li>
     <li>V2V communication (Can't be done in 'Story mode')</li>
+</ul>
+
+## :dizzy: How to use?
+<ol>
+    <li>Start GTA V and enter story mode. Get a truck and change camera to First-per view (by pressing V) (preferred)</li>
+    <li>In settings, change the resolution to 800x600 and place the window on top-left corner of your screen</li>
+    <li>Clone the repo and install dependencies (requirements.txt provided)</li>
+    <li>Run od_gtav.py and you will see a OpenCv window popping up. Enjoyy...</li>
 </ol>
 
 ## :heart: Reference
 Inspired by [Sendex](https://github.com/Sentdex)
 
-## :smiley: Extras
+## :hammer_and_wrench: Extras
 Readme will be updated with more info...
