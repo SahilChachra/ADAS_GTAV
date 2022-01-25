@@ -1,7 +1,7 @@
 <h1 align="center">Driving Assistance System in GTA V</h1>
 
 ## :innocent: Motivation
-We all enjoy playing GTA games be it for mission, online or for the open world experience. In recent times, it has become famous in computer vision community to show some concept w.r.t to autonomous driving. In this repo I try add some assisted driving features with use of computer vision in Python
+We all enjoy playing GTA games be it for mission, online or for the open world experience. In recent times, it has become famous in computer vision community to show some concepts w.r.t to autonomous driving. In this repo, I try to add some assisted driving features with the use of computer vision in Python.
 
 ## :framed_picture: Some Screenshots
 
