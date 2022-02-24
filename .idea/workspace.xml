@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4948a222-dfcb-4d23-83e9-3e5574d0c872" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/directKeys.py" beforeDir="false" afterPath="$PROJECT_DIR$/directKeys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/od_gtav.py" beforeDir="false" afterPath="$PROJECT_DIR$/od_gtav.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

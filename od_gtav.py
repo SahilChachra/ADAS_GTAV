@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 import time
-from directKeys import PressKey, W, A, S, D, ReleaseKey
+from directKeys import PressKey, W, A, S, D, SPACE, ReleaseKey
 import math
 import warnings
 warnings.filterwarnings("ignore")
@@ -31,6 +31,14 @@ def turn_right():
     time.sleep(0.5)
     ReleaseKey(D)
 
+def stop():
+    ReleaseKey(W)
+    ReleaseKey(A)
+    ReleaseKey(D)
+    PressKey(SPACE)
+    time.sleep(0.5)
+    ReleaseKey(SPACE)
+
 def slow_down():
     ReleaseKey(W)
     ReleaseKey(A)
@@ -38,7 +46,6 @@ def slow_down():
     PressKey(S)
     time.sleep(0.5)
     ReleaseKey(S)
-
 ################### CONTROL ENDS #####################
 
 ################### SCREEN CAPTURE ###################
@@ -97,26 +104,29 @@ def process_img(image, model):
                 cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
 
                 mid_object_x, mid_object_y = (xmin + xmax)//2, (ymin + ymax)//2
-                cv2.circle(image, (mid_object_x, mid_object_y), 5, (255,0,0), -1)
+                # cv2.circle(image, (mid_object_x, mid_object_y), 5, (255,0,0), -1)
                 cv2.line(image, (0, 550), (800, 550), (120, 150, 90), 3)
 
                 mid_line_x, mid_line_y = 400, 550
                 # angle = math.degrees(math.atan2(mid_object_y - mid_line_y, mid_object_x - mid_line_x))
                 # print('Angle is :',angle)
                 dist = math.dist([mid_object_x, mid_object_y], [mid_line_x, mid_line_y])
-                # print("Distance is :", dist)
+                print("Distance is :", dist)
 
                 cv2.line(image, (400, 550), (mid_object_x, mid_object_y), (90, 190, 200), 2)
                 # cv2.putText(image, str(dist), ((mid_object_x - 400)//2, (mid_object_y - 550)//2), cv2.FONT_HERSHEY_SIMPLEX, 5, (120, 155, 50), 2)
                 cv2.putText(image, name + f',{int(dist)}', (xmin - 10, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-
-                if dist < 150 and name.lower() in ['car', 'perso', 'truck']:
-                    slow_down()
+                print(name.lower())
+                if dist < 210 and name.lower() in ['car', 'person', 'truck', 'bike', 'bicycle']:
                     print("Slowing down...")
+                    slow_down()
+                if name.lower() == 'traffic_light_red' and dist >290 and dist < 310:
+                    print("Red light ahead")
+                    print("Stopping...")
+                    stop()
         return image
-    except TypeError:
-        pass
-
+    except Exception as e:
+        print(e)
 
 def main():
     prev_time = 0
@@ -139,7 +149,7 @@ def main():
         screen = grab_screen(region=(0, 0, 799, 599))
 
         curr_time = time.time()
-        print("FPS : {0}".format(1 // (curr_time - prev_time)))
+        # print("FPS : {0}".format(1 // (curr_time - prev_time)))
         prev_time = curr_time
 
         #processedImg = process_img(screen)

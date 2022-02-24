@@ -11,15 +11,16 @@ We all enjoy playing GTA games be it for mission, online or for the open world e
 ## :star: What is actually happening
 So, the vehicle chosen is a truck (as assistive breaking makes more sense in highway for trucks in case driver doesn't reacts in time). The horizontal line which you see is a reference line from where distance (pixel distance) is measured w.r.t detected objects. For now breaks are applied only if a person, car or truck comes very close to the ego vehicle. Above the bounding box you see name of the class and the distance (in pixels). Also, the car is NOT driving itself, the user drives it and where necessary the model's output decide the assistive breaks. (Tried to make the car drive on it's own inside the lane using OpenCv, seriously results weren't good xD)
 
-## :key: Features
+## :key: Current Features
 <ol>
-    <li>Automatically break/slow down if the car ahead of yours is very close</li>
+    <li>Use model trained on private GTA V dataset</li>
+    <li>Automatically break/slow down if the vehicle ahead of yours is very close</li>
+    <li>Stop(handbrake) the vehicle when traffic light is red</li>
 </ol>
 
 ## :eyes: Future add-ons
 <ul>
     <li>Use depth maps to measure distance instead of pixel distance</li>
-    <li>Automatically stop the truck if traffic light is red</li>
     <li>Improve/add lane detection (gtav_laneDetect is not accurate hence cannot drive automatically)</li>
     <li>V2V communication (Can't be done in 'Story mode')</li>
 </ul>
