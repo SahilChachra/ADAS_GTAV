@@ -80,6 +80,9 @@ def grab_screen(region=None):
 ##################### PROCESSING #####################
 
 def process_img(image, model):
+    '''
+    Before accelerating, it takes = 0.11526s on average
+    '''
     try:
         output = model(image)
         op = output.pandas().xyxy[0]
@@ -110,7 +113,6 @@ def process_img(image, model):
                 if dist < 150 and name.lower() in ['car', 'perso', 'truck']:
                     slow_down()
                     print("Slowing down...")
-
         return image
     except TypeError:
         pass
@@ -118,12 +120,16 @@ def process_img(image, model):
 
 def main():
     prev_time = 0
+    processedImg_prev_time = 0
     print("Staring in ...")
     for i in range(4)[::-1]:
         print(i+1)
         time.sleep(1)
     try:
-        model = torch.hub.load("ultralytics/yolov5", "yolov5s")
+        # Load COCO pretrained model
+        # model = torch.hub.load("ultralytics/yolov5", "yolov5s")
+        # Load Custom trained model
+        model = torch.hub.load("ultralytics/yolov5", "custom", path="best_e46_335_v2.pt")
         model.cuda()
     except exception as e:
         print("While loading model, exception occured.\n", e)
@@ -137,7 +143,10 @@ def main():
         prev_time = curr_time
 
         #processedImg = process_img(screen)
+        # processedImg_curr_time = time.time()
         processedImg = process_img(screen, model)
+        #print("Time taken by func : ", (processedImg_curr_time - processedImg_prev_time))
+        #processedImg_prev_time = processedImg_curr_time
 
         #cv2.imshow("GTA V", processedImg)
         cv2.imshow("GTA V", cv2.cvtColor(processedImg, cv2.COLOR_BGR2RGB))
