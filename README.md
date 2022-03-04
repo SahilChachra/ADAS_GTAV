@@ -20,6 +20,7 @@ So, the vehicle chosen is a truck (as assistive breaking makes more sense in hig
 
 ## :eyes: Future add-ons
 <ul>
+    <li>Traffic Intensity</li>
     <li>Use depth maps to measure distance instead of pixel distance</li>
     <li>Improve/add lane detection (gtav_laneDetect is not accurate hence cannot drive automatically)</li>
     <li>V2V communication (Can't be done in 'Story mode')</li>
