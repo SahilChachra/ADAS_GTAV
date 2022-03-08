@@ -15,7 +15,7 @@ So, the vehicle chosen is a truck (as assistive breaking makes more sense in hig
 <ol>
     <li>Use model trained on private GTA V dataset</li>
     <li>Automatically break/slow down if the vehicle ahead of yours is very close</li>
-    <li>Stop(handbrake) the vehicle when traffic light is red</li>
+    <li>Stop(use handbrake) the vehicle when traffic light is red</li>
 </ol>
 
 ## :eyes: Future add-ons
